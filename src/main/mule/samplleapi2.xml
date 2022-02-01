@@ -10,5 +10,11 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="samplleapi2Flow" doc:id="bb2cf337-3c78-46bd-8127-c1a481027322" >
 		<http:listener doc:name="Listener" doc:id="11d4bc12-b45d-4e82-951f-2987df8d822b" config-ref="HTTP_Listener_config" path="/samplleapi2"/>
 		<logger level="INFO" doc:name="Logger" doc:id="fe00b764-18bb-4980-863a-01adf4aad2a2" message='#["hello world api is sucess"]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="8d5218b3-bc57-4bf6-95a6-a9a35c7eb36f" message='#["log-2 sucessful"]'/>
+		<flow-ref doc:name="Flow Reference" doc:id="ac2483ee-4e47-45ac-9ba7-d9d7fa93ca5d" name="samplleapi2Sub_Flow"/>
+		<logger level="INFO" doc:name="Logger" doc:id="84e8f48a-8478-4d6c-9f2c-54eec2bd3d1d" message='#["subflow logger"]'/>
 	</flow>
+	<sub-flow name="samplleapi2Sub_Flow" doc:id="49476f4d-5cd6-405d-926d-2e159b056c09" >
+		<logger level="INFO" doc:name="Logger" doc:id="570f5d91-2362-4e16-8643-98109d526cc4" message='#["sub flow sucessful"]'/>
+	</sub-flow>
 </mule>
